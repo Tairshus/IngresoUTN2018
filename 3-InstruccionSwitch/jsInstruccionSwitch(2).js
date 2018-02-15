@@ -5,18 +5,16 @@ var mesDelAño = document.getElementById('mes').value;
 
 switch (mesDelAño)
 {
-    case "Julio" : alert ("Abrigate que hace frio")
-     break;
+    case "Julio" : 
     case "Agosto" : alert ("Abrigate que hace frio")
      break;
-    case "Septiembre" : alert ("Ya paso el frio, ahora hace calor")
-     break;
-    case "Octubre" : alert ("Ya paso el frio, ahora hace calor")
-     break;
-    case "Noviembre" : alert ("Ya paso el frio, ahora hace calor")
-     break;
+     
+    case "Septiembre" : 
+    case "Octubre" :
+    case "Noviembre" : 
     case "Diciembre" : alert ("Ya paso el frio, ahora hace calor")
      break;
+    
     default : alert ("Aun falta para el invierno")
      break;
 }
