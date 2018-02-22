@@ -10,9 +10,7 @@ function Mostrar()
 	var promedioPos;
 	var promedioNeg;
 	var diferencia;
-	
-	//declarar contadores y variables 
-	
+	var numPares = 0;
 	var respuesta="si";
 
 	while(respuesta!="no")
@@ -32,17 +30,37 @@ function Mostrar()
 		{
 			contadorCeros++
 		}
+		if (numero % 2 == 0)
+		{
+			numPares++
+		}
 	 respuesta = prompt("Desea seguir ingresando numeros?");
 	}
 	promedioPos = numPos / contadorPos;
 	promedioNeg = numNeg / contadorNeg;
-	diferencia = numPos - numNeg;
+	
+	if (contadorNeg != 0 && contadorPos != 0)
+	{diferencia = numPos - numNeg;
 
-	document.write ("Suma de numeros negativos " + numNeg + " Suma de numeros positivos " + numPos + " Cantidad de numeros positivos ingresados " + contadorPos + 
-	" Cantidad de numeros negativos ingresados " + contadorNeg + " Cantidad de ceros " + contadorCeros + " Promedio de numeros positivos " + promedioPos 
-     + " Promedio de numeros negativos " + promedioNeg + " Diferencia entre numero positivo y negativo " + diferencia);
+	}
+	else if (contadorNeg == 0 && contadorPos == 0)
+	{
+      diferencia = "No se han ingresado numeros";
+	}
+	else if (contadorNeg == 0)
+	{
+		diferencia = "No se han ingresado negativos";
+	}
+	else {
+		diferencia = "No se han ingresado positivos";
+	}
+
+	document.write ("Suma de numeros negativos: " + numNeg +  "<br/>" + "Suma de numeros positivos: "  + numPos + "<br/>" + "Cantidad de numeros positivos ingresados: " + contadorPos + 
+	"<br/>" + "Cantidad de numeros negativos ingresados: " + contadorNeg + "<br/>" + "Cantidad de ceros: " + contadorCeros + "<br/>" + "Promedio de numeros positivos: " + promedioPos 
+     + "<br/>"  +"Promedio de numeros negativos: " + promedioNeg + "<br/>" + "Diferencia entre numero positivo y negativo: " + diferencia + "<br/>" + "Cantidad de numeros pares " + numPares);
 
 
 
 
 }//FIN DE LA FUNCIÓN
+
