@@ -5,20 +5,25 @@ function Mostrar()
 	var numeroMayor;
     var numeroMenor;
 	var respuesta="si";
-	var numeroNuevo;
+	var numero;
+	var flag = 0;
 
-	while(respuesta!="no")
+	do 
 	{
-		numeroNuevo = parseInt(prompt("Ingrese un numero"));
-
-		contador = [0 , numeroNuevo];
-
-		numeroMayor = Math.max(contador);
-		numeroMenor = Math.min(contador);
+		numero = parseInt(prompt("Ingrese un numero"));
 		
-		respuesta = prompt("¿Cotinuar ingresando numeros?");
+		if (numero > numeroMayor || flag == 0)
+		{
+		  numeroMayor = numero;
+		}
+		if (numero < numeroMenor || flag == 0)
+		{
+			numeroMenor = numero;
+			flag++
+		}
+		respuesta = prompt("Para seguir ingresando numeros escriba si");
 	
-	}
+	} while (respuesta != "no")
 
 	document.getElementById("maximo").value = numeroMayor;
 	document.getElementById("minimo").value = numeroMenor;
